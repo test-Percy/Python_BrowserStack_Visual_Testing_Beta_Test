@@ -12,14 +12,19 @@
 ## Setup
 
 * Clone the repo
-* Install Gauge `https://docs.gauge.org/getting_started/installing-gauge.html?os=macos&language=python&ide=vscode`
+* Install Python 3 () `https://docs.gauge.org/getting_started/installing-gauge.html?os=macos&language=python&ide=vscode`
 * Install dependencies `pip install -r requirements.txt`
-* Update `*.json` files inside the `config/` directory with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings)
-
+* 
 ## Running your tests
-* To run a single test, run `paver run single`
-* To run local tests, run `paver run local`
-* To run parallel tests, run `paver run parallel`
+* To run a single test, run `python single.py`
+* To run local tests, run `python local.py`
+* To run parallel tests, run `python parallel.py`
+* To run Appium tests for IOS, run `python ios-appium.py`
+* To run Appium tests for Android, run `python android-appium.py``
+* To run Espresso tests,run `python espresso.py`
+* To run XcuiTest tests,run `python xcuittest.py`
+* To run Earlgrey tests,run `python earlgrey.py`
+
 ## Notes
 * You can view your test results on the [BrowserStack Automate dashboard](https://www.browserstack.com/automate)
 * To test on a different set of browsers, check out our [platform configurator](https://www.browserstack.com/automate/python#setting-os-and-browser)
