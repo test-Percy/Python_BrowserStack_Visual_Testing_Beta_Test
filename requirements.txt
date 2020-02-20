@@ -1,0 +1,6 @@
+browserstack-local
+selenium
+requests
+Appium-Python-Client
+os
+system
