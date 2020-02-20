@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 import  sys, json
 
 json_name = sys.argv[1]
-USERNAME = "rathildemo"
-BROWSERSTACK_ACCESS_KEY = "QdxLbeazV7hKoFxqXbaT"
+BROWSERSTACK_USERNAME = os.environ['BROWSERSTACK_USERNAME']
+BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 
 with open(json_name, "r") as f:
     obj = json.loads(f.read())
@@ -24,7 +24,7 @@ caps = dict(instance_caps.items())
 #------------------------------------------------------#
 # THE TEST TO BE RUN PARALLELY GOES HERE
 
-driver = webdriver.Remote(command_executor='https://%s:%s@hub.browserstack.com/wd/hub' % (USERNAME, BROWSERSTACK_ACCESS_KEY),desired_capabilities=caps)
+driver = webdriver.Remote(command_executor='https://%s:%s@hub.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),desired_capabilities=caps)
 driver.get("http://www.google.com")
 if not "Google" in driver.title:
     raise Exception("Unable to load google page!")

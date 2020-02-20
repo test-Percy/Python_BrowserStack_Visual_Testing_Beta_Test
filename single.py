@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import os,time
 
-USERNAME = os.environ['BROWSERSTACK_USERNAME']
+BROWSERSTACK_USERNAME = os.environ['BROWSERSTACK_USERNAME']
 BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 
 desired_cap = {
@@ -18,7 +18,7 @@ desired_cap = {
 }
 
 driver = webdriver.Remote(
-    command_executor='https://%s:%s@hub-aps.browserstack.com/wd/hub' % (USERNAME, BROWSERSTACK_ACCESS_KEY),
+    command_executor='https://%s:%s@hub-aps.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),
     desired_capabilities=desired_cap)
 
 driver.get("http://www.google.com")
