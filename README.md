@@ -6,6 +6,8 @@
 
 ## Prerequisites
 
+* Brew (Installed on mac)
+* Python3 (Installation notes [here](https://gist.github.com/RathilVasani/0ab70692688b3632d447ced5c277a9be))
 * [BrowserStack Automate](https://www.browserstack.com/automate) account with at least 4 parallel tests. Signup for a free trial [here](https://www.browserstack.com/users/sign_up).
 <!--* [Gauge](http://getgauge.io) should be installed and in $PATH. Latest version of Gauge can be downloaded from [the website](http://getgauge.io/get-started/index.html).-->
 
@@ -20,7 +22,7 @@
 * To run local tests, run `python local.py`
 * To run parallel tests, run `python parallel.py`
 * To run Appium tests for IOS, run `python ios-appium.py`
-* To run Appium tests for Android, run `python android-appium.py``
+* To run Appium tests for Android, run `python android-appium.py`
 * To run Espresso tests,run `python espresso.py`
 * To run XcuiTest tests,run `python xcuittest.py`
 * To run Earlgrey tests,run `python earlgrey.py`
