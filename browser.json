@@ -22,8 +22,8 @@
   
     {
       "os_version" : "8.0",
-"device" : "Samsung Galaxy S9",
-"real_mobile" : "true",
+      "device" : "Samsung Galaxy S9",
+      "real_mobile" : "true",
       "name":"Parallel test 3: Samsung Galaxy S9 8.0",
       "build"  : "Python Demo",
       "browserstack.debug"  : "true",
