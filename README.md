@@ -9,7 +9,12 @@
 * [Brew](https://docs.brew.sh/Installation) (Optional)
 * Python3 (Installation notes [here](https://gist.github.com/RathilVasani/0ab70692688b3632d447ced5c277a9be))
 * [BrowserStack Automate](https://www.browserstack.com/automate) account with at least 4 parallel tests. Signup for a free trial [here](https://www.browserstack.com/users/sign_up).
-<!--* [Gauge](http://getgauge.io) should be installed and in $PATH. Latest version of Gauge can be downloaded from [the website](http://getgauge.io/get-started/index.html).-->
+* Export the environment variables for the Username and Access Key of your BrowserStack account
+
+  ```
+  export BROWSERSTACK_USERNAME=<browserstack-username> &&
+  export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key>
+  ```
 
 ## Setup
 
