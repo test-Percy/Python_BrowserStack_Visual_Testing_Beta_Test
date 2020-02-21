@@ -13,7 +13,6 @@
 ## Setup
 
 * Clone the repo
-* Install Python 3 () `https://docs.gauge.org/getting_started/installing-gauge.html?os=macos&language=python&ide=vscode`
 * Install dependencies `pip install -r requirements.txt`
 * Export the environment variables for the Username and Access Key of your BrowserStack account
 
