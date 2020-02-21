@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
-import  sys, json
+import os, sys, json
+
 
 json_name = sys.argv[1]
 BROWSERSTACK_USERNAME = os.environ['BROWSERSTACK_USERNAME']

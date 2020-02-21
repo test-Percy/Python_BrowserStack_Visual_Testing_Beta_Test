@@ -6,12 +6,12 @@ from selenium.webdriver.support import expected_conditions as EC
 import requests , time , os
 
  
-USERNAME = os.environ['BROWSERSTACK_USERNAME']
+BROWSERSTACK_USERNAME = os.environ['BROWSERSTACK_USERNAME']
 BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 
 
 
-response = requests.get('https://api-cloud.browserstack.com/app-automate/recent_apps', auth=(USERNAME,BROWSERSTACK_ACCESS_KEY))
+response = requests.get('https://api-cloud.browserstack.com/app-automate/recent_apps', auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
 not_uploaded = False
 json_data = response.json()
 for item in json_data:
@@ -26,7 +26,7 @@ if not_uploaded == False:
     'data': (None, '{"url": "https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa","custom_id":"IOSDemoApp"}'),
 	}
 
-	response = requests.post('https://api-cloud.browserstack.com/app-automate/upload', files=files, auth=(USERNAME,BROWSERSTACK_ACCESS_KEY))
+	response = requests.post('https://api-cloud.browserstack.com/app-automate/upload', files=files, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
 	print(response.status_code)
 	print(response.json())
 
