@@ -18,7 +18,7 @@ desired_cap = {
 }
 
 driver = webdriver.Remote(
-    command_executor='https://%s:%s@hub-aps.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),
+    command_executor='https://%s:%s@hub-cloud.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),
     desired_capabilities=desired_cap)
 
 driver.get("http://www.google.com")
