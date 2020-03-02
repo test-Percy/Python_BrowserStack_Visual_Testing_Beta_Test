@@ -20,15 +20,14 @@ for item in json_data:
 			not_uploaded = True
 			break
 	except:
-		print("custom_id not found!!")
+		print("")
 if not_uploaded == False:
 	files = {
     'data': (None, '{"url": "https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa","custom_id":"IOSDemoApp"}'),
 	}
 
 	response = requests.post('https://api-cloud.browserstack.com/app-automate/upload', files=files, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
-	print(response.status_code)
-	print(response.json())
+
 
 desired_caps = {
     "name": "Appium Google Search Demo",
@@ -40,7 +39,7 @@ desired_caps = {
  
 
 driver = webdriver.Remote("http://" + BROWSERSTACK_USERNAME + ":" + BROWSERSTACK_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub", desired_caps)
-
+print("Started Test")
 text_button = WebDriverWait(driver, 30).until(
     EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Text Button"))
 )

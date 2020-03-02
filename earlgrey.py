@@ -10,13 +10,13 @@ response = requests.get('https://api-cloud.browserstack.com/app-automate/earlgre
 not_uploaded = False
 json_data = response.json()
 for item in json_data:
-	try:
+	try:	
 		if item["custom_id"] == "EarlgreyApp" :
 			not_uploaded = True
-			print("App already uploaded!")
+			print("Zip Found")
 			break
 	except:
-		print("custom_id not found!!")
+		print("")
 if not_uploaded == False:
 	print("App Uploading...")
 	files = {
@@ -24,7 +24,6 @@ if not_uploaded == False:
 	}
 
 	response = requests.post('https://api-cloud.browserstack.com/app-automate/earlgrey/app-dir', files=files, auth=(BROWSERSTACK_SERNAME,BROWSERSTACK_ACCESS_KEY))
-	print(response.status_code)
 
 
 ###################Earlgrey App Upload #########################
@@ -62,8 +61,7 @@ headers = {
 data = '{"devices": ["iPhone 8 Plus-11"], "appDir": "EarlgreyApp", "deviceLogs" : "true"}'
 
 response = requests.post('https://api-cloud.browserstack.com/app-automate/earlgrey/build', headers=headers, data=data, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
-print(response.status_code)
-print(response.json())
+
 ###################Earl Run Test #########################
 
 

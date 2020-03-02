@@ -14,11 +14,12 @@ for item in json_data:
 	try:
 		if item["custom_id"] == "XCUIApp" :
 			not_uploaded = True
-			print("Found App Here!")
+			print("Found App")
 			break
 	except:
-		print("custom_id not found!!")
+		print("")
 if not_uploaded == False:
+	print("App Uploading...")
 	files = {
     'data': (None, '{"url": "https://docs.google.com/uc?export=download&id=1uDi_V38XEhnYmklrex0XeREb2j9A4flg","custom_id":"XCUIApp"}'),
 	}
@@ -37,17 +38,17 @@ for item in json_data:
 	try:
 		if item["custom_id"] == "XCUITestApp" :
 			not_uploaded = True
-			print("Found Test App Here!")
+			print("Found Test App")
 			break
 	except:
-		print("custom_id not found!!")
+		print("")
 if not_uploaded == False:
+	print("Test App Uploading...")
 	files = {
     'data': (None, '{"url": "https://docs.google.com/uc?export=download&id=10jArmkUCWldHeNajwRX3gMvzM5iaVdKe","custom_id":"XCUITestApp"}'),
 	}
 
 	response = requests.post('https://api-cloud.browserstack.com/app-automate/xcuitest/test-suite', files=files, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
-	print(response.status_code)
 
 
 ###################XCUITest Test App Upload #########################
@@ -59,11 +60,10 @@ headers = {
     'Content-Type': 'application/json',
 }
 
-data = '{"devices": ["iPhone 8 Plus-11"], "app": "XCUIApp", "deviceLogs" : "true", "testSuite": "XCUITestApp"}'
+data = '{"devices": ["iPhone 8 Plus-11"], "app": "XCUIApp", "deviceLogs" : "true", "testSuite": "XCUITestApp", "project": "XcuiTestSuite"}'
 
 response = requests.post('https://api-cloud.browserstack.com/app-automate/xcuitest/build', headers=headers, data=data, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
-print(response.status_code)
-print(response.json())
+
 ###################XCUITest Run Test #########################
 
 

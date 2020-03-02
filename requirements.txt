@@ -1,6 +1,5 @@
 browserstack-local
+setuptools
 selenium
 requests
 Appium-Python-Client
-os
-system

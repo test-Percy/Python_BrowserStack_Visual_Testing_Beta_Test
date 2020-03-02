@@ -11,7 +11,7 @@ BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 bs_local = Local()
 bs_local_args = { "key": BROWSERSTACK_ACCESS_KEY }
 bs_local.start(**bs_local_args) 
-print ("Success starting local!!")
+# print ("Success starting local!!")
 
 desired_cap = {
  'browser': 'Chrome',
@@ -26,18 +26,20 @@ desired_cap = {
 
 try:
     driver = webdriver.Remote(command_executor='https://%s:%s@hub.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),desired_capabilities=desired_cap)
+    print("Local Test Started")
+
     driver.get("localhost:45691/check") # Local Environment
     time.sleep(10)
     
     if "Up and running" in driver.page_source:
         requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "passed", "reason": "Found Up and running in Body"})
-        print("Test Pass!") # Rest Api For Pass!
+        print("Marked Test Pass using REST API") # Rest Api For Pass!
     else:
         requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "failed", "reason": "Not Found Up and running in Body"})
-        print("Test Fail!") # Rest Api for Fail !
+        print("Marked Test Fail using REST API") # Rest Api for Fail !
 
 finally:
     bs_local.stop()
-    print ("Success closing local!!")
+
 
 driver.quit()
