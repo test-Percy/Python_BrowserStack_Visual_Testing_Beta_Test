@@ -28,10 +28,10 @@ try:
     driver = webdriver.Remote(command_executor='https://%s:%s@hub.browserstack.com/wd/hub' % (BROWSERSTACK_USERNAME, BROWSERSTACK_ACCESS_KEY),desired_capabilities=desired_cap)
     print("Local Test Started")
 
-    driver.get("localhost:45691/check") # Local Environment
+    driver.get("localhost:8000") # Local Environment
     time.sleep(10)
     
-    if "Up and running" in driver.page_source:
+    if "Local Server" in driver.title:
         requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "passed", "reason": "Found Up and running in Body"})
         print("Marked Test Pass using REST API") # Rest Api For Pass!
     else:
