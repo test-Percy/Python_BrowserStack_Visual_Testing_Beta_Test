@@ -13,7 +13,7 @@
 ## Setup
 
 * Clone the repo
-* Install dependencies `pip install -r requirements.txt`
+* Install dependencies `pip3 install -r requirements.txt`
 * Export the environment variables for the Username and Access Key of your BrowserStack account
 
   ```
