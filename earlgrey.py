@@ -23,7 +23,7 @@ if not_uploaded == False:
     'data': (None, '{"url": "https://www.browserstack.com/app-automate/sample-apps/ios/BStack-EarlGrey-SampleApp.zip","custom_id":"EarlgreyApp"}'),
 	}
 
-	response = requests.post('https://api-cloud.browserstack.com/app-automate/earlgrey/app-dir', files=files, auth=(BROWSERSTACK_SERNAME,BROWSERSTACK_ACCESS_KEY))
+	response = requests.post('https://api-cloud.browserstack.com/app-automate/earlgrey/app-dir', files=files, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
 
 
 ###################Earlgrey App Upload #########################
