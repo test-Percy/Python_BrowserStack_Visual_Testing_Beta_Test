@@ -32,14 +32,12 @@ try:
     time.sleep(10)
     
     if "Local Server" in driver.title:
-        requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "passed", "reason": "Found Up and running in Body"})
+        requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "passed", "reason": "Local Server title matched"})
         print("Marked Test Pass using REST API") # Rest Api For Pass!
     else:
-        requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "failed", "reason": "Not Found Up and running in Body"})
+        requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "failed", "reason": "Local Server title not found"})
         print("Marked Test Fail using REST API") # Rest Api for Fail !
 
 finally:
+    driver.quit()
     bs_local.stop()
-
-
-driver.quit()

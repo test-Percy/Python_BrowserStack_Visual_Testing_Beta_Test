@@ -18,7 +18,7 @@ for item in json_data:
 	except:
 		print("")
 if not_uploaded == False:
-	print("App Uploading...")
+	print("Test Suite  Uploading...")
 	files = {
     'data': (None, '{"url": "https://www.browserstack.com/app-automate/sample-apps/ios/BStack-EarlGrey-SampleApp.zip","custom_id":"EarlgreyApp"}'),
 	}

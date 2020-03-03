@@ -37,12 +37,12 @@ for item in json_data:
 	try:
 		if item["custom_id"] == "EspressoTestApp" :
 			not_uploaded = True
-			print("Found Test App")
+			print("Found Test Suite")
 			break
 	except:
 		print("")
 if not_uploaded == False:
-	print("Test App Uploading...")
+	print("Test Suite Uploading...")
 	files = {
     'data': (None, '{"url": "https://docs.google.com/uc?export=download&id=1fSDCibYeOZLSlOA1wdgRX9uqGZLqyh8l","custom_id":"EspressoTestApp"}'),
 	}
