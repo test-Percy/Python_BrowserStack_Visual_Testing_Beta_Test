@@ -27,7 +27,7 @@
 * To run Appium tests for IOS, run `python3 ios-appium.py`
 * To run Appium tests for Android, run `python3 android-appium.py`
 * To run Espresso tests,run `python3 espresso.py`
-* To run XcuiTest tests,run `python3 xcuittest.py`
+* To run XcuiTest tests,run `python3 xcuitest.py`
 * To run Earlgrey tests,run `python3 earlgrey.py`
 
 ## Notes
