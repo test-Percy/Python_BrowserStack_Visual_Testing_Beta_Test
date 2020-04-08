@@ -13,7 +13,7 @@ try:
 
 	subprocess.call(["python3","espresso.py"])
 
-	subprocess.call(["python3","xcuittest.py"])
+	subprocess.call(["python3","xcuitest.py"])
 
 	subprocess.call(["python3","earlgrey.py"])
 
