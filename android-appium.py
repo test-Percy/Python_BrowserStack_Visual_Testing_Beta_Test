@@ -34,7 +34,6 @@ desired_caps = {
     "build": "Python android ",
 	"device" : "Samsung Galaxy S8",
 	"app" : "AndroidDemoApp",
-    "browserstack.debug" : "true",
 }
  
 

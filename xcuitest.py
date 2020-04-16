@@ -38,12 +38,12 @@ for item in json_data:
 	try:
 		if item["custom_id"] == "XCUITestApp" :
 			not_uploaded = True
-			print("Found Test App")
+			print("Found Test Suite")
 			break
 	except:
 		print("")
 if not_uploaded == False:
-	print("Test App Uploading...")
+	print("Test Suite Uploading...")
 	files = {
     'data': (None, '{"url": "https://docs.google.com/uc?export=download&id=10jArmkUCWldHeNajwRX3gMvzM5iaVdKe","custom_id":"XCUITestApp"}'),
 	}
@@ -65,6 +65,10 @@ data = '{"devices": ["iPhone 8 Plus-11"], "app": "XCUIApp", "deviceLogs" : "true
 response = requests.post('https://api-cloud.browserstack.com/app-automate/xcuitest/build', headers=headers, data=data, auth=(BROWSERSTACK_USERNAME,BROWSERSTACK_ACCESS_KEY))
 
 ###################XCUITest Run Test #########################
+
+
+
+
 
 
 
