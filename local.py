@@ -10,7 +10,7 @@ BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 
 bs_local = Local()
 bs_local_args = { "key": BROWSERSTACK_ACCESS_KEY }
-bs_local.start(**bs_local_args) 
+bs_local.start(**bs_local_args)
 # print ("Success starting local!!")
 
 desired_cap = {
@@ -30,8 +30,8 @@ try:
 
     driver.get("localhost:8000") # Local Environment
     time.sleep(10)
-    
-    if "Local Seer" in driver.title:
+
+    if "Local Server" in driver.title:
         requests.put('https://'+BROWSERSTACK_USERNAME+':'+BROWSERSTACK_ACCESS_KEY+'@api.browserstack.com/automate/sessions/'+driver.session_id+'.json', data={"status": "passed", "reason": "Local Server title matched"})
         print("Marked Test Pass using REST API") # Rest Api For Pass!
     else:
