@@ -7,7 +7,7 @@ BROWSERSTACK_USERNAME = os.environ['BROWSERSTACK_USERNAME']
 BROWSERSTACK_ACCESS_KEY = os.environ['BROWSERSTACK_ACCESS_KEY']
 
 desired_cap = {
-'browser': 'Chrome',
+'browserName': 'Chrome',
  'browser_version': '75.0',
  'os': 'Windows',
  'os_version': '7',
